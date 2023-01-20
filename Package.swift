@@ -5,12 +5,13 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftBus",
+    platforms: [.iOS(.v13), .macOS(.v10_15), .macCatalyst(.v13), .tvOS(.v13), .watchOS(.v6)],
     products: [
-        .library(name: "SwiftBus", targets: ["SwiftBus"]),
+        .library(name: "SwiftBus", targets: ["SwiftBus"])
     ],
     dependencies: [],
     targets: [
         .target(name: "SwiftBus", dependencies: []),
-        .testTarget(name: "SwiftBusTests", dependencies: ["SwiftBus"]),
+        .testTarget(name: "SwiftBusTests", dependencies: ["SwiftBus"])
     ]
 )
