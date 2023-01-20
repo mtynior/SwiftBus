@@ -7,13 +7,14 @@
 
 import Foundation
 
+/// A protocol that represents an event that can be sent and received by EventBus
 public protocol EventRepresentable {}
 
-public struct NamedEvent: EventRepresentable {
-    public let name: String
-    public let params: [AnyHashable: Any]
+internal struct NamedEvent: EventRepresentable {
+    internal let name: String
+    internal let params: [AnyHashable: Any]
     
-    public init(name: String, params: [AnyHashable: Any] = [:]) {
+    internal init(name: String, params: [AnyHashable: Any] = [:]) {
         self.name = name
         self.params = params
     }

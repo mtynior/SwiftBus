@@ -11,7 +11,7 @@ import Combine
 
 final class EventBusTests: XCTestCase {
     var eventBus: EventBus!
-    var subscriptions: [AnyCancellable]!
+    var subscriptions: Set<AnyCancellable>!
     
     override func setUpWithError() throws {
         eventBus  = EventBus()
@@ -190,7 +190,7 @@ extension EventBusTests {
     func testReceiveOnBackgroundThread() throws {
         // given
         let threadExpectation = expectation(description: "Should receive an event on the background thread")
-        eventBus.onReceive(TestEvents.rebelsDetected, performOn: DispatchQueue.global(qos: .userInitiated)) { _ in
+        eventBus.onReceive(TestEvents.rebelsDetected, performOn: DispatchQueue.global(qos: .background)) { _ in
             if !Thread.current.isMainThread {
                 threadExpectation.fulfill()
             }

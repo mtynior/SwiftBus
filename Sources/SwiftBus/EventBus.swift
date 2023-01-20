@@ -10,8 +10,14 @@ import Combine
 
 public final class EventBus: EventTransmittable {
     private let listenersRegistry: EventListenersRegistry
+    
+    /// EventBus unique identifier.
     public let id: String
     
+    /// Creates an instance of the EventBus
+    ///
+    /// - Parameters:
+    ///     - id: EventBus identifier.
     public init(id: String = UUID().uuidString) {
         self.id = id
         self.listenersRegistry = EventListenersRegistry()
