@@ -1,7 +1,7 @@
 <div align="center">
     <img src="https://user-images.githubusercontent.com/6362174/213769534-7ad3b0b9-31e0-4358-8bdf-79aa443a482a.png" height="256" />
     <h1>SwiftBus</h1>
-    <h3>A simple and lightweight Event Bus library written in Swift and powered by Combine.</h3>
+    <h3>A simple and lightweight Event Bus library written in Swift and powered by Combine</h3>
 </div>
 
 <p align="center">
@@ -108,7 +108,7 @@ eventBus.send("JumpedToHyperspace")
 ```
 
 ### Receiving events on different threads
-By default, events are received on the same thread that was used to sent the event.
+By default, events are received on the same thread that was used to send the event.
 SwiftBus allows to switch threads that are used to receive events:
 
 ```swift
